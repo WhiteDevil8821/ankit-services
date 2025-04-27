@@ -96,7 +96,7 @@ export default function Navbar() {
 
             {/* Call Button */}
             <Link
-              href="tel:+919876543210"
+              href="tel:+919308776501"
               className={cn(
                 "flex items-center gap-2 px-4 py-2 rounded-full transition-colors",
                 isScrolled
