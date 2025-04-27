@@ -4,8 +4,8 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, Phone } from "lucide-react"
 import { cn } from "@/lib/utils"
-import Image from 'next/image';
-import logo from '@/public/logo.png';
+import Image from 'next/image'
+import logo from '@/public/logo.png'
 
 // Define the sections for easier management
 const sections = [
@@ -26,26 +26,21 @@ export default function Navbar() {
   // Handle scroll effect for navbar background and active section
   useEffect(() => {
     const handleScroll = () => {
-      // Update navbar background
       if (window.scrollY > 10) {
         setIsScrolled(true)
       } else {
         setIsScrolled(false)
       }
 
-      // Update active section
       const sectionElements = sections.map((section) => ({
         id: section.id,
-        element: document.getElementById(section.id === "hero" ? "hero" : section.id),
+        element: document.getElementById(section.id),
       }))
 
-      // Find the section that is currently in view
       const currentSection = sectionElements.reduce((acc, section) => {
         if (!section.element) return acc
-
         const rect = section.element.getBoundingClientRect()
         const isInView = rect.top <= 150 && rect.bottom >= 150
-
         if (isInView) return section.id
         return acc
       }, "hero")
@@ -66,20 +61,23 @@ export default function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4",
+        isScrolled ? "bg-white shadow-md py-2" : "bg-yellow-50 py-4"
       )}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/">
+          <Link href="/" className="flex items-center space-x-2">
             <Image
               src={logo}
               alt="Ankit Services Logo"
-              width={100}
-              height={100}
+              width={50}
+              height={50}
               className="object-contain"
             />
+            <span className="font-bold text-lg uppercase tracking-wide text-gray-800 font-sans">
+              Ankit Services
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -97,12 +95,7 @@ export default function Navbar() {
             {/* Call Button */}
             <Link
               href="tel:+919308776501"
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-full transition-colors",
-                isScrolled
-                  ? "bg-yellow-500 text-black hover:bg-yellow-600"
-                  : "bg-yellow-500 text-black hover:bg-yellow-600",
-              )}
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500 text-black hover:bg-yellow-600 transition-colors"
             >
               <Phone className="h-4 w-4" />
               <span className="font-medium">Call Now</span>
@@ -112,7 +105,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={cn("md:hidden p-2 rounded-md", isScrolled ? "text-black" : "text-white")}
+            className="md:hidden p-2 rounded-md text-black"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -121,13 +114,17 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <div
-        className={cn(
-          "fixed inset-0 bg-black bg-opacity-90 z-40 md:hidden transition-transform duration-300 transform",
-          isOpen ? "translate-x-0" : "translate-x-full",
-        )}
-      >
-        <div className="flex flex-col items-center justify-center h-full space-y-8 p-4">
+      {isOpen && (
+        <div className="fixed inset-0 bg-yellow-50 z-40 md:hidden flex flex-col items-center justify-center space-y-8 p-4 transition-all duration-300">
+          {/* Close Button */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-4 right-4 p-2 text-black"
+            aria-label="Close menu"
+          >
+            <X className="h-8 w-8" />
+          </button>
+
           {sections.map((section) => (
             <MobileNavLink
               key={section.id}
@@ -148,7 +145,7 @@ export default function Navbar() {
             <span className="font-medium">Call Now</span>
           </Link>
         </div>
-      </div>
+      )}
     </header>
   )
 }
@@ -170,12 +167,14 @@ function NavLink({
       href={href}
       className={cn(
         "font-medium transition-colors relative",
-        isScrolled ? "text-gray-800" : "text-white",
-        isActive && (isScrolled ? "text-yellow-600" : "text-yellow-400"),
+        isScrolled ? "text-gray-800" : "text-gray-800",
+        isActive && "text-yellow-600"
       )}
     >
       {label}
-      {isActive && <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-yellow-500 rounded-full"></span>}
+      {isActive && (
+        <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-yellow-500 rounded-full"></span>
+      )}
     </Link>
   )
 }
@@ -195,11 +194,11 @@ function MobileNavLink({
   return (
     <Link
       href={href}
-      className={cn(
-        "text-white text-2xl font-medium transition-colors",
-        isActive ? "text-yellow-500" : "hover:text-yellow-500",
-      )}
       onClick={onClick}
+      className={cn(
+        "text-black text-2xl font-medium transition-colors",
+        isActive ? "text-yellow-600" : "hover:text-yellow-600"
+      )}
     >
       {label}
     </Link>

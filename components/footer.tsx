@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { Instagram } from "lucide-react"
+import Image from 'next/image'
+import logo from '@/public/logo.png'
 
 export default function Footer() {
   return (
@@ -7,28 +9,21 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Ankit Services</h3>
+            <div className="flex items-center space-x-4 mb-4">
+              <Image src={logo} alt="Logo" width={60} height={60} className="object-contain" />
+              <h3 className="text-2xl font-bold tracking-wide text-white">ANKIT SERVICES</h3>
+            </div>
+
             <p className="text-gray-400 mb-4">
               Your reliable partner for comfortable and safe taxi services. Available 24/7 for all your transportation
               needs.
             </p>
+
             <div className="flex space-x-4">
-              {/* <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link> */}
               <Link href="https://www.instagram.com/ankit_services/" target="_blank" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
-              {/* <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link> */}
             </div>
           </div>
 
