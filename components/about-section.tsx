@@ -11,14 +11,10 @@ export default function AboutSection() {
         </div>
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-lg text-gray-700 mb-6">
-            Ankit Services is a premier taxi booking company dedicated to providing exceptional transportation services.
-            With years of experience in the industry, we have built a reputation for reliability, safety, and customer
-            satisfaction.
+          Ankit Services is a leading taxi company based in Ranchi, Jharkhand, known for safe, reliable, and customer-focused transportation. With over 20 years of experience, we have earned the trust of our customers through our quality service.
           </p>
           <p className="text-lg text-gray-700">
-            Our fleet of well-maintained vehicles and team of professional drivers ensure that you reach your
-            destination comfortably and on time. Whether you need a ride for a short trip within the city or a
-            long-distance journey, Ankit Services has got you covered.
+          Our fleet of well-maintained vehicles and professional drivers ensures you reach your destination safely, comfortably, and on time. Whether it’s a short trip within Ranchi or a long-distance journey, Ankit Services is here for you.
           </p>
         </div>
       </div>

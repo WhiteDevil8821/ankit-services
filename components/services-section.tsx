@@ -21,7 +21,7 @@ export default function ServicesSection() {
             </CardHeader>
             <CardContent className="text-center">
               <p className="text-gray-700">
-                Comfortable and quick transportation within the city for your daily commute or errands.
+                Enjoy comfortable and quick transportation around the city for your daily travel or tasks.
               </p>
             </CardContent>
           </Card>

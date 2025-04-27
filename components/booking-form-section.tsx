@@ -96,17 +96,17 @@ export default function BookingFormSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name</Label>
-                    <Input id="name" name="name" placeholder="John Doe" required />
+                    <Input id="name" name="name" placeholder="Enter your full name" required />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" name="email" type="email" placeholder="john@example.com" required />
+                    <Input id="email" name="email" type="email" placeholder="Enter your email" required />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" name="phone" placeholder="Your contact number" required />
+                    <Input id="phone" name="phone" placeholder="Enter your phone number" required />
                   </div>
 
                   <div className="space-y-2">
@@ -145,7 +145,7 @@ export default function BookingFormSection() {
 
                 <div className="space-y-2">
                   <Label htmlFor="pickupAddress">Pickup Address</Label>
-                  <Textarea id="pickupAddress" name="pickupAddress" placeholder="Enter your pickup location" required />
+                  <Textarea id="pickupAddress" name="pickupAddress" placeholder="Enter your pickup address" required />
                 </div>
 
                 {tripType === "one-way" && (

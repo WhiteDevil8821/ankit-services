@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, Phone } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Image from 'next/image';
+import logo from '@/public/logo.png';
 
 // Define the sections for easier management
 const sections = [
@@ -70,11 +72,14 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link
-            href="/"
-            className={cn("text-2xl font-bold transition-colors", isScrolled ? "text-black" : "text-white")}
-          >
-            Ankit Services
+          <Link href="/">
+            <Image
+              src={logo}
+              alt="Ankit Services Logo"
+              width={100}
+              height={100}
+              className="object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -135,7 +140,7 @@ export default function Navbar() {
 
           {/* Call Button */}
           <Link
-            href="tel:+919876543210"
+            href="tel:+919308776501"
             className="flex items-center gap-2 px-6 py-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-600 transition-colors"
             onClick={handleLinkClick}
           >

@@ -20,8 +20,8 @@ export default function ContactSection() {
                 <Phone className="h-6 w-6 text-yellow-600" />
               </div>
               <h3 className="font-semibold mb-2">Phone</h3>
-              <p className="text-gray-700">+91 98765 43210</p>
-              <p className="text-gray-700">+91 12345 67890</p>
+              <p className="text-gray-700">+91 93087 76501</p>
+              {/* <p className="text-gray-700">+91 12345 67890</p> */}
             </CardContent>
           </Card>
 
@@ -31,8 +31,8 @@ export default function ContactSection() {
                 <Mail className="h-6 w-6 text-yellow-600" />
               </div>
               <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-gray-700">info@ankitservices.com</p>
-              <p className="text-gray-700">booking@ankitservices.com</p>
+              <p className="text-gray-700">ankit.services2023@gmail.com</p>
+              {/* <p className="text-gray-700">booking@ankitservices.com</p> */}
             </CardContent>
           </Card>
 
@@ -42,8 +42,8 @@ export default function ContactSection() {
                 <MapPin className="h-6 w-6 text-yellow-600" />
               </div>
               <h3 className="font-semibold mb-2">Address</h3>
-              <p className="text-gray-700">123 Transport Lane, City Center</p>
-              <p className="text-gray-700">New Delhi, 110001</p>
+              <p className="text-gray-700">Dhurwa, Ranchi</p>
+              <p className="text-gray-700">Jharkhand, 834004</p>
             </CardContent>
           </Card>
 

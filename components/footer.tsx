@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { Instagram } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -13,22 +13,22 @@ export default function Footer() {
               needs.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              {/* <Link href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Link>
               <Link href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              </Link> */}
+              <Link href="https://www.instagram.com/ankit_services/" target="_blank" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              {/* <Link href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -92,9 +92,9 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact Info</h3>
             <ul className="space-y-2">
-              <li className="text-gray-400">123 Transport Lane, City Center, New Delhi, 110001</li>
-              <li className="text-gray-400">+91 98765 43210</li>
-              <li className="text-gray-400">info@ankitservices.com</li>
+              <li className="text-gray-400">Dhurwa, Ranchi, Jharkhand - 834004</li>
+              <li className="text-gray-400">+91 93087 76501</li>
+              <li className="text-gray-400">ankit.services2023@gmail.com</li>
               <li className="text-gray-400">24/7 Available</li>
             </ul>
           </div>
