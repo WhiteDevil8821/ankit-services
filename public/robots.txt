@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ankit-services.in
+
+# Sitemaps
+Sitemap: https://ankit-services.in/sitemap.xml
