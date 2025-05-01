@@ -63,10 +63,11 @@ export default function BookingFormSection() {
     <section id="booking" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Book Your Ride</h2>
+          <h2 className="text-3xl font-bold mb-4">Book Your Ride: Quick & Easy Booking Form</h2>
           <div className="w-20 h-1 bg-yellow-500 mb-6"></div>
           <p className="max-w-2xl text-gray-700">
-            Fill out the form below to book your taxi. We'll get back to you shortly to confirm your booking.
+            Fill out the form below to book your taxi. We'll get back to you shortly to confirm your booking and provide
+            the best ride experience.
           </p>
         </div>
 

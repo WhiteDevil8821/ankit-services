@@ -7,9 +7,8 @@ import { cn } from "@/lib/utils"
 import Image from 'next/image'
 import logo from '@/public/logo.png'
 
-// Define the sections for easier management
 const sections = [
-  { id: "hero", label: "Home", href: "#" },
+  { id: "hero", label: "Home", href: "#hero" },
   { id: "about", label: "About", href: "#about" },
   { id: "services", label: "Services", href: "#services" },
   { id: "why-choose-us", label: "Why Us", href: "#why-choose-us" },
@@ -23,7 +22,6 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
 
-  // Handle scroll effect for navbar background and active section
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -52,7 +50,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Close mobile menu when clicking a link
   const handleLinkClick = () => {
     setIsOpen(false)
   }
@@ -63,11 +60,12 @@ export default function Navbar() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled ? "bg-white shadow-md py-2" : "bg-yellow-50 py-4"
       )}
+      aria-label="Main navigation"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2" aria-label="Ankit Services Homepage">
             <Image
               src={logo}
               alt="Ankit Services Logo"
@@ -81,7 +79,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-6" role="navigation">
             {sections.map((section) => (
               <NavLink
                 key={section.id}
@@ -96,6 +94,7 @@ export default function Navbar() {
             <Link
               href="tel:+919308776501"
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500 text-black hover:bg-yellow-600 transition-colors"
+              title="Call Now"
             >
               <Phone className="h-4 w-4" />
               <span className="font-medium">Call Now</span>
@@ -106,7 +105,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-md text-black"
-            aria-label="Toggle menu"
+            aria-label="Toggle mobile menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -120,7 +119,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(false)}
             className="absolute top-4 right-4 p-2 text-black"
-            aria-label="Close menu"
+            aria-label="Close mobile menu"
           >
             <X className="h-8 w-8" />
           </button>
@@ -140,6 +139,7 @@ export default function Navbar() {
             href="tel:+919308776501"
             className="flex items-center gap-2 px-6 py-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-600 transition-colors"
             onClick={handleLinkClick}
+            title="Call Now"
           >
             <Phone className="h-5 w-5" />
             <span className="font-medium">Call Now</span>
@@ -170,6 +170,7 @@ function NavLink({
         isScrolled ? "text-gray-800" : "text-gray-800",
         isActive && "text-yellow-600"
       )}
+      title={`Go to ${label} section`}
     >
       {label}
       {isActive && (
@@ -199,6 +200,7 @@ function MobileNavLink({
         "text-black text-2xl font-medium transition-colors",
         isActive ? "text-yellow-600" : "hover:text-yellow-600"
       )}
+      title={`Go to ${label} section`}
     >
       {label}
     </Link>

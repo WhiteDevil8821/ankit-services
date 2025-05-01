@@ -7,10 +7,10 @@ export default function TestimonialsSection() {
     <section id="testimonials" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">What Our Customers Say</h2>
+          <h2 className="text-3xl font-bold mb-4">Customer Testimonials: What Our Clients Say</h2>
           <div className="w-20 h-1 bg-yellow-500 mb-6"></div>
           <p className="max-w-2xl text-gray-700">
-            Don't just take our word for it - hear from some of our satisfied customers
+            Hear directly from our satisfied customers about their experiences with Ankit Services.
           </p>
         </div>
 
